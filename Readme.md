@@ -1,4 +1,4 @@
-##&nbsp;&nbsp;&nbsp;Car Shop<br><br>
+##Car Shop<br><br>
 
 1. This repository describes a car shop that's building 3 different types of cars having or not autonomous driving modes and that's able of counting the total number of cars sold.
 2. The project was built using 3 design patterns.
