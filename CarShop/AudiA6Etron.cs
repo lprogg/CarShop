@@ -4,6 +4,6 @@ namespace CarShop
     {
         public AudiA6Etron() => AutonomousDriving = new Drive();
 
-        public override string BuildCar() => " Building an Audi A6 e-tron - ";
+        public override string BuildCar() => " in Germany - ";
     }
 }

@@ -4,6 +4,6 @@ namespace CarShop
     {
         public TeslaModelS() => AutonomousDriving = new Drive();
 
-        public override string BuildCar() => " Building a Tesla Model S - ";
+        public override string BuildCar() => " in USA - ";
     }
 }

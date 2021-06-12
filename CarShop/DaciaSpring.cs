@@ -4,6 +4,6 @@ namespace CarShop
     {
         public DaciaSpring() => AutonomousDriving = new NotDrive();
 
-        public override string BuildCar() => " Building a Dacia Spring - ";
+        public override string BuildCar() => " in Romania - ";
     }
 }

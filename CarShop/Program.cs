@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace CarShop
 {
@@ -11,21 +12,22 @@ namespace CarShop
         {
             var car = CarShop.GetInstance();
             const int numberOfClients = 2;
-            
-            for (var i = 0; i < numberOfClients; i++)
-            {
-                CarList.ListOfCars.ForEach(
-                    item => 
-                    {
-                        (_carsSold, _build) = car.SellCar(item);
-                        Print.PrintMethod(_carsSold, _build.BuildCar(), _build.GetAutonomousDriving());
-                    });
-                Console.WriteLine();
-            }
+
+            Enumerable.Range(0, numberOfClients).ToList().ForEach(_ =>
+                {
+                    CarList.ListOfCars.ForEach(
+                        item =>
+                        {
+                            (_carsSold, _build) = car.SellCar(item);
+                            Print.PrintMethod(_carsSold, _build.GetType().Name, _build.BuildCar(), _build.GetAutonomousDriving());
+                        });
+                    Console.WriteLine();
+                }
+            );
 
             (_carsSold, _build) = car.SellCar("Dacia");
             _build.SetAutonomousDriving(new Drive());
-            Print.PrintMethod(_carsSold, _build.BuildCar(), _build.GetAutonomousDriving());
+            Print.PrintMethod(_carsSold, _build.GetType().Name, _build.BuildCar(), _build.GetAutonomousDriving());
         }
     }
 }

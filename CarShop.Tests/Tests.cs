@@ -6,9 +6,25 @@ namespace CarShop.Tests
     public class Tests
     {
         [Fact]
-        public void GetCarType_WhenTheInputIsASpecificString()
+        public void GetDaciaManufacturingLocationType_WhenTheInputIsASpecificString()
         {
             const string str = "Dacia";
+            var type = CarFactory.GetCar(str);
+            Assert.IsType<string>(type.BuildCar());
+        }
+
+        [Fact]
+        public void GetTeslaManufacturingLocationType_WhenTheInputIsASpecificString()
+        {
+            const string str = "Tesla";
+            var type = CarFactory.GetCar(str);
+            Assert.IsType<string>(type.BuildCar());
+        }
+
+        [Fact]
+        public void GetAudiManufacturingLocationType_WhenTheInputIsASpecificString()
+        {
+            const string str = "Audi";
             var type = CarFactory.GetCar(str);
             Assert.IsType<string>(type.BuildCar());
         }
@@ -41,13 +57,33 @@ namespace CarShop.Tests
         }
 
         [Fact]
-        public void GetAutonomousSupportAfterSet_WhenTheFactoryMethodIsCalled()
+        public void GetDaciaAutonomousSupportAfterSet_WhenTheFactoryMethodIsCalled()
         {
             const string str = "Dacia";
             var type = CarFactory.GetCar(str);
 
             type.SetAutonomousDriving(new Drive());
             type.GetAutonomousDriving().Should().Be("Will drive autonomous.");
+        }
+
+        [Fact]
+        public void GetTeslaAutonomousSupportAfterSet_WhenTheFactoryMethodIsCalled()
+        {
+            const string str = "Tesla";
+            var type = CarFactory.GetCar(str);
+
+            type.SetAutonomousDriving(new NotDrive());
+            type.GetAutonomousDriving().Should().Be("Won't drive autonomous.");
+        }
+
+        [Fact]
+        public void GetAudiAutonomousSupportAfterSet_WhenTheFactoryMethodIsCalled()
+        {
+            const string str = "Audi";
+            var type = CarFactory.GetCar(str);
+
+            type.SetAutonomousDriving(new NotDrive());
+            type.GetAutonomousDriving().Should().Be("Won't drive autonomous.");
         }
     }
 }
