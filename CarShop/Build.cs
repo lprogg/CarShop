@@ -4,9 +4,9 @@ namespace CarShop
     {
         public abstract string BuildCar();
 
-        protected IAutonomous AutonomousDriving;
+        protected IAutonomousStrategy AutonomousDrivingStrategy;
 
-        public string GetAutonomousDriving() => AutonomousDriving.DriveAutonomous();
-        public void SetAutonomousDriving(IAutonomous newDrivingType) => AutonomousDriving = newDrivingType;
+        public string GetAutonomousDriving() => AutonomousDrivingStrategy.AutonomousDrivingAbility();
+        public void SetAutonomousDriving(IAutonomousStrategy newDrivingType) => AutonomousDrivingStrategy = newDrivingType;
     }
 }

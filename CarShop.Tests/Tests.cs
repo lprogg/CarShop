@@ -62,7 +62,7 @@ namespace CarShop.Tests
             const string str = "Dacia";
             var type = CarFactory.GetCar(str);
 
-            type.SetAutonomousDriving(new Drive());
+            type.SetAutonomousDriving(new AutonomousDriving());
             type.GetAutonomousDriving().Should().Be("Will drive autonomous.");
         }
 
@@ -72,7 +72,7 @@ namespace CarShop.Tests
             const string str = "Tesla";
             var type = CarFactory.GetCar(str);
 
-            type.SetAutonomousDriving(new NotDrive());
+            type.SetAutonomousDriving(new NonAutonomousDriving());
             type.GetAutonomousDriving().Should().Be("Won't drive autonomous.");
         }
 
@@ -82,7 +82,7 @@ namespace CarShop.Tests
             const string str = "Audi";
             var type = CarFactory.GetCar(str);
 
-            type.SetAutonomousDriving(new NotDrive());
+            type.SetAutonomousDriving(new NonAutonomousDriving());
             type.GetAutonomousDriving().Should().Be("Won't drive autonomous.");
         }
     }

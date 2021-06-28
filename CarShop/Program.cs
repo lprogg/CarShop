@@ -10,7 +10,7 @@ namespace CarShop
 
         static void Main(string[] args)
         {
-            var car = CarShop.GetInstance();
+            var car = ShopSingleton.GetInstance();
             const int numberOfClients = 2;
 
             Enumerable.Range(0, numberOfClients).ToList().ForEach(_ =>
@@ -26,7 +26,7 @@ namespace CarShop
             );
 
             (_carsSold, _build) = car.SellCar("Dacia");
-            _build.SetAutonomousDriving(new Drive());
+            _build.SetAutonomousDriving(new AutonomousDriving());
             Print.PrintMethod(_carsSold, _build.GetType().Name, _build.BuildCar(), _build.GetAutonomousDriving());
         }
     }

@@ -2,24 +2,24 @@ using System;
 
 namespace CarShop
 {
-    public sealed class CarShop
+    public sealed class ShopSingleton
     {
-        private static CarShop _carShop;
+        private static ShopSingleton _shopSingleton;
         private int _carsSold;
 
-        private CarShop()
+        private ShopSingleton()
         {
             _carsSold = 0;
         }
 
-        public static CarShop GetInstance()
+        public static ShopSingleton GetInstance()
         {
-            if (_carShop == null)
+            if (_shopSingleton == null)
             {
-                _carShop = new CarShop();
+                _shopSingleton = new ShopSingleton();
             }
 
-            return _carShop;
+            return _shopSingleton;
         }
         public Tuple<int, Build> SellCar(string carType)
         {

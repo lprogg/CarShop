@@ -2,7 +2,7 @@ namespace CarShop
 {
     public class TeslaModelS : Build
     {
-        public TeslaModelS() => AutonomousDriving = new Drive();
+        public TeslaModelS() => AutonomousDrivingStrategy = new AutonomousDriving();
 
         public override string BuildCar() => " in USA - ";
     }
