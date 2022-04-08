@@ -24,10 +24,6 @@ namespace CarShop
                     Console.WriteLine();
                 }
             );
-
-            (_carsSold, _build) = car.SellCar("Dacia");
-            _build.SetAutonomousDriving(new AutonomousDriving());
-            Print.PrintMethod(_carsSold, _build.GetType().Name, _build.BuildCar(), _build.GetAutonomousDriving());
         }
     }
 }
